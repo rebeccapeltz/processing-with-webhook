@@ -54,6 +54,10 @@ then open new terminal
 netlify functions:invoke
 ```
 
+## Deloy Next to Netlify
+https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/
+
+
 ## Twilio SendGrid
 
 https://app.sendgrid.com/
