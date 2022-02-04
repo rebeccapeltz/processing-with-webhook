@@ -47,14 +47,14 @@ npm install -g netlify-cli
   functions = "./functions"
 ```
 
-`yarn dev`
+To test functions locally: `netlify dev`
 
 then open new terminal
 ```bash
 netlify functions:invoke
 ```
 
-## Deloy Next to Netlify
+## Delpoy Next to Netlify
 https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/
 
 
@@ -62,3 +62,5 @@ https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/
 
 https://app.sendgrid.com/
 
+samples
+https://rpeltz-webhook-processing.netlify.app/.netlify/functions/chuck-norris
