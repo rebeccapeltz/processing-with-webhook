@@ -32,14 +32,14 @@ exports.handler = async function (event, context) {
   try {
     const response = await sgMail.send(msg);
     console.log('success', response[0].statusCode);
-    console.log(response[0]);
+    console.log('success-response',response[0]);
 
     return {
-      statusCode: 200,
+      statusCode: response[0].statusCode,
       body: JSON.stringify({ message: response[0] }),
     };
   } catch (error) {
-    // console.error('error', JSON.stringify(error, 0, 2));
+    console.error('error', JSON.stringify(error, 0, 2));
     // console.log(error.code);
     // console.log(error.response.body);
     // const errorMsg = error.response.body.errors[0].message;
