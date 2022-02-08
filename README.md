@@ -54,7 +54,7 @@ then open new terminal
 netlify functions:invoke
 ```
 
-## Delpoy Next to Netlify
+## Deploy Next to Netlify
 https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/
 
 
@@ -64,3 +64,18 @@ https://app.sendgrid.com/
 
 samples
 https://rpeltz-webhook-processing.netlify.app/.netlify/functions/chuck-norris
+
+## Use Cases
+
+### Eager Upload/Explicit
+
+We create derived assets on upload or after the upload has already occurred (explicit).
+
+We can specify an eager_notification_url which is a webhook.  The response gets posted to this endpoint when the derived assets are complete.
+You can use the free https://webhook.site or you can write a serverless function that implements an email API to send you email to notify you that the 
+processing is complete.
+
+### Multi Method
+
+Create an animated image, video, or single PDF from a set of images.
+
