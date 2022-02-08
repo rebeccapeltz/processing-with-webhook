@@ -40,8 +40,6 @@ exports.handler = async function (event, context) {
     };
   } catch (error) {
     console.error('error', JSON.stringify(error, 0, 2));
-    // console.log(error.code);
-    // console.log(error.response.body);
     // const errorMsg = error.response.body.errors[0].message;
     // console.log(errorMsg);
 
