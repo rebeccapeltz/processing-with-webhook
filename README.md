@@ -79,3 +79,11 @@ processing is complete.
 
 Create an animated image, video, or single PDF from a set of images.
 
+## CREDITS
+
+Image by <a href="https://pixabay.com/users/larisa-k-1107275/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=19830">Larisa Koshkina</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=19830">Pixabay</a>
+
+Image by <a href="https://pixabay.com/users/roverhate-1759589/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1127666">Ronny Overhate</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1127666">Pixabay</a>
+
+
+Image by <a href="https://pixabay.com/users/garoch-10307/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=142506">Garoch</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=142506">Pixabay</a>
