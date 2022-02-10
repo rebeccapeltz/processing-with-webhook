@@ -19,11 +19,12 @@ async function getRejectedQ() {
         resource_type: 'video',
       }
     );
-
     // return the promise
     return rejectedQ;
   } catch (error) {
-    console.log('get approved Q error', JSON.stringify(error, null, 2));
+    // if error log and return empty resources
+    console.log('get rejected Q error', JSON.stringify(error, null, 2));
+    return {"resources": []};
   }
 }
 
@@ -38,6 +39,7 @@ async function destroyVideo(video) {
     return destroyResponse;
   } catch (error) {
     console.log('destroy error', JSON.stringify(error, null, 2));
+    return {"destroy_error": JSON.stringify(error,null,2)}
   }
 }
 
@@ -56,11 +58,12 @@ exports.handler = async function (event, context) {
     };
   }
 
-  // wait 30 seconds before destroying
+  // wait 30 seconds before destroying for demo purposes
   await sleep(500);
 
   try {
     const rejectedQ = await getRejectedQ();
+
     console.log('q', rejectedQ);
     console.log('q resources', rejectedQ.resources);
     for (let i = 0; i < rejectedQ.resources.length; i++) {
@@ -70,14 +73,14 @@ exports.handler = async function (event, context) {
     }
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: JSON.stringify(destroyResponse, null, 2) }),
+      body: JSON.stringify({ message: "rejected Q processed" }),
     };
   } catch (error) {
     console.error('error', JSON.stringify(error, 0, 2));
 
     return {
       statusCode: 500,
-      body: JSON.stringify(error),
+      body: JSON.stringify({error: "error processing rejected Q"}),
     };
   }
 };

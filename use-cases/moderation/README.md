@@ -13,7 +13,7 @@ We're using webhooks to let us know when the processing is complete.  After is i
 It will be `approved` or `rejected`.  This will put it into either the approved or rejected queue.  
 
 For this exercise, we have two videos.  A video with a hot tub will be rejected and a video with elephants walking will be accepted.  
-We're going to make both of these videos inaccessible on upload using the access_control option access_type: 'token'.  
+We're going to make both of these videos inaccessible on upload using the access_control option with access_type: 'token'.  
 
 The webhook will be called when moderation is complete and the video has been categorized as 
 
