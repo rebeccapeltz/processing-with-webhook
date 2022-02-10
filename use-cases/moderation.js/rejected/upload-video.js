@@ -10,7 +10,7 @@ cloudinary.uploader
     access_control: [{ access_type: 'token' }],
     moderation: 'google_video_moderation:possible',
     notification_url:
-      'https://webhook.site/1a0678f1-afc3-4077-8666-e232a5fe8c2d'
+      'https://rpeltz-webhook-processing.netlify.app/.netlify/functions/webhook_clear_google_moderation_rejected_queue'
   })
   .then(result => {
     console.log(result)

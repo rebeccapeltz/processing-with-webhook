@@ -1,6 +1,14 @@
 require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
 
+// give time to go look at Q in the DAM
+function sleep(ms) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
+  }
+  
+
 // get all the rejected videos in the Google moderation Q
 async function getRejectedQ() {
   try {
@@ -27,7 +35,6 @@ async function destroyVideo(video) {
       invalidate: true,
       resource_type: 'video',
     });
-    console.log('destroy response', JSON.stringify(destroyResponse, null, 2));
     return destroyResponse;
   } catch (error) {
     console.log('destroy error', JSON.stringify(error, null, 2));
@@ -49,6 +56,9 @@ exports.handler = async function (event, context) {
     };
   }
 
+  // wait 30 seconds before destroying
+  await sleep(500);
+
   try {
     const rejectedQ = await getRejectedQ();
     console.log('q', rejectedQ);
@@ -60,7 +70,7 @@ exports.handler = async function (event, context) {
     }
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'rejected destroy success' }),
+      body: JSON.stringify({ message: JSON.stringify(destroyResponse, null, 2) }),
     };
   } catch (error) {
     console.error('error', JSON.stringify(error, 0, 2));

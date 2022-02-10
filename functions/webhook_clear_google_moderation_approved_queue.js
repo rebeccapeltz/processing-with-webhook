@@ -1,6 +1,13 @@
 require('dotenv').config();
 const cloudinary = require('cloudinary').v2;
 
+// give time to go look at Q in the DAM
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 // get all the approved videos in the Google moderation Q
 async function getApprovedQ() {
   try {
@@ -51,6 +58,9 @@ exports.handler = async function (event, context) {
     };
   }
 
+    // wait 30 seconds before approving
+    await sleep(500);
+
   try {
     const approvedQ = await getApprovedQ();
     console.log('q', approvedQ);
@@ -61,7 +71,7 @@ exports.handler = async function (event, context) {
     }
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'approval review success' }),
+      body: JSON.stringify({ message: JSON.stringify(updateResponse,null,2) }),
     };
   } catch (error) {
     console.error('error', JSON.stringify(error, 0, 2));
