@@ -3,9 +3,9 @@ const cloudinary = require('cloudinary').v2;
 const fetch = require('node-fetch');
 
 // use this to call netlify functions
-async function processQ(fnURL, body) {
+async function processQ(fnURL) {
   // return promise
-  return await fetch(fnURL, { method: 'POST', body: body });
+  return await fetch(fnURL, { method: 'POST'});
 }
 
 exports.handler = async function (event, context) {
@@ -26,8 +26,8 @@ exports.handler = async function (event, context) {
   // setup functions to process Google moderation Qs
   const approvedFn = `${process.env.PROD_FN_PATH}webhook_clear_google_moderation_approved_queue`;
   const rejectedFn = `${process.env.PROD_FN_PATH}webhook_clear_google_moderation_rejected_queue`;
-  console.log(approvedFn, event.body);
-  console.log(rejectedFn, event.body);
+  console.log(approvedFn);
+  console.log(rejectedFn);
 
   try {
     const approvedResponse = await processQ(approvedFn);

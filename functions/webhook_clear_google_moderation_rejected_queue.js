@@ -45,7 +45,7 @@ async function destroyVideo(video) {
 
 exports.handler = async function (event, context) {
   // exit if not a post
-  if (!event.body || event.httpMethod !== 'POST') {
+  if (event.httpMethod !== 'POST') {
     return {
       statusCode: 400,
       headers: {
