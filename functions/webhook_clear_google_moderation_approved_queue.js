@@ -72,16 +72,14 @@ exports.handler = async function (event, context) {
     }
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        message: JSON.stringify(updateResponse, null, 2),
-      }),
+      body: JSON.stringify({ message: "accepted Q processed" }),
     };
   } catch (error) {
     console.error('error', JSON.stringify(error, 0, 2));
 
     return {
       statusCode: 500,
-      body: JSON.stringify(error),
+      body: JSON.stringify({error: "error processing accepted Q"}),
     };
   }
 };
